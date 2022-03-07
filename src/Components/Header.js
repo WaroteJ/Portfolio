@@ -1,25 +1,24 @@
 import React from "react";
 import { Disclosure, } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { NavLink } from "react-router-dom";
 
 const navigation = [
-  { name: 'Accueil', href: '/home', current: true },
-  { name: 'A propos', href: '/about', current: false },
-  { name: 'Portfolio', href: '/portfolio', current: false },
-  { name: 'Compétences', href: '/skills', current: false },
-  { name: 'Contact', href: '/contact', current: false },
+  { name: 'Accueil', to: 'home'},
+  { name: 'A propos', to: 'about'},
+  { name: 'Portfolio', to: 'portfolio'},
+  { name: 'Compétences', to: 'skills'},
+  { name: 'Contact', to: 'contact'},
 ]
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+const navItemClasses = 'text-lg transition border dark:border-primary dark:hover:bg-primary-500 dark:hover:border-secondary px-3 py-2 rounded-md font-medium';
 
 function Header(props) {
   return (
     <Disclosure as="nav" className="bg-neutral-800 dark:bg-primary dark:text-secondary">
     {({ open }) => (
       <>
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="xl:container mx-auto">
           <div className="relative flex items-center justify-between h-16">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               {/* Mobile menu button*/}
@@ -39,18 +38,18 @@ function Header(props) {
               </div>
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className={classNames(
-                        item.current ? 'dark:text-cta' : 'hover:text-cta',
-                        'text-lg transition border dark:border-primary dark:hover:bg-primary-500 dark:hover:border-secondary px-3 py-2 rounded-md font-medium'
-                      )}
-                      aria-current={item.current ? 'page' : undefined}
+                  {navigation.map((item,key) => (
+                    
+                    <NavLink
+                      key={key}
+                      to={item.to}
+                      className={
+                        ({ isActive }) => 
+                          isActive ? 'dark:text-cta ' + navItemClasses : 'hover:text-cta ' + navItemClasses
+                      }
                     >
                       {item.name}
-                    </a>
+                    </NavLink>
                   ))}
                 </div>
               </div>
@@ -59,19 +58,19 @@ function Header(props) {
         </div>
 
         <Disclosure.Panel className="sm:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {navigation.map((item) => (
-              <Disclosure.Button
-                key={item.name}
-                as="a"
-                href={item.href}
-                className={classNames(
-                  item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                  'block px-3 py-2 rounded-md text-base font-medium'
-                )}
-                aria-current={item.current ? 'page' : undefined}
-              >
-                {item.name}
+          <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col">
+            {navigation.map((item,key) => (
+              <Disclosure.Button>
+                  <NavLink
+                    key={key}
+                    to={item.to}
+                    className={
+                      ({ isActive }) => 
+                        isActive ? 'dark:text-cta ' + navItemClasses : 'hover:text-cta ' + navItemClasses
+                    }
+                  >
+                    {item.name}
+                  </NavLink>
               </Disclosure.Button>
             ))}
           </div>
