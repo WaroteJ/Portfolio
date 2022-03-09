@@ -15,7 +15,7 @@ const navItemClasses = 'text-lg transition border dark:border-primary dark:hover
 
 function Header(props) {
   return (
-    <Disclosure as="nav" className="bg-neutral-800 dark:bg-primary dark:text-secondary">
+    <Disclosure as="nav" className="bg-neutral-800 dark:bg-primary dark:text-secondary fixed w-full z-50">
     {({ open }) => (
       <>
         <div className="xl:container mx-auto">
