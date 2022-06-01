@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function Home(props) {
     return (
         <>
-            <div className="xl:container mx-auto grid grid-cols-2 dark:text-secondary pt-10 pb-5">   
+            <div className="xl:container mx-auto grid grid-cols-2 dark:text-secondary pt-10 pb-5 px-5">   
                 <img className="border border-secondary rounded-md aspect-square object-cover w-10/12" 
                 src={"/I.jpg"} alt="I" />
                 <div className="px-2 flex flex-col align-baseline text-left">

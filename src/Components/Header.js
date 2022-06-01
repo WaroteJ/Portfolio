@@ -15,7 +15,7 @@ const navItemClasses = 'text-lg transition border dark:border-primary dark:hover
 
 function Header(props) {
   return (
-    <Disclosure as="nav" className="bg-neutral-800 dark:bg-primary dark:text-secondary fixed w-full z-50">
+    <Disclosure as="nav" className="bg-neutral-800 dark:bg-primary dark:text-secondary fixed w-full z-50 pr-5">
     {({ open }) => (
       <>
         <div className="xl:container mx-auto">
@@ -60,9 +60,9 @@ function Header(props) {
         <Disclosure.Panel className="sm:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col">
             {navigation.map((item,key) => (
-              <Disclosure.Button>
+              <Disclosure.Button key={key}>
                   <NavLink
-                    key={key}
+                    
                     to={item.to}
                     className={
                       ({ isActive }) => 

@@ -53,7 +53,6 @@ const projects = [
     },
   ]
 
-  console.log(projects)
 function Portfolio(props) {
     return (
         <div className="mx-auto flex sm:flex-row flex-col dark:text-secondary">   
