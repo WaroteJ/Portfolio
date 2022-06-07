@@ -1,7 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .center-absolute {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.menu-item {
+  -webkit-transition-duration: .5s !important;
+          transition-duration: .5s !important;
 }
 /*# sourceMappingURL=App.css.map */

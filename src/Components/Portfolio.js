@@ -55,9 +55,9 @@ const projects = [
 
 function Portfolio(props) {
     return (
-        <div className="mx-auto flex sm:flex-row flex-col dark:text-secondary">   
-            <div className="w-full sm:w-1/3 pt-10 pb-5">
-                <div className="w-full sm:w-1/3 relative sm:fixed flex flex-col mb-5 sm:mb-0">
+        <div id={props.path} className="section mx-auto flex lg:flex-row flex-col dark:text-secondary">   
+            <div className="w-full relative lg:w-1/3 pt-10 pb-5">
+                <div className="w-full sticky top-24 flex flex-col mb-5 lg:mb-0">
                     <div className="flex justify-between">
                         <div className="flex flex-col justify-between w-1/3">
                             <div className="w-10/12 border-t border-secondary"></div>
@@ -75,7 +75,7 @@ function Portfolio(props) {
                     </div>
                     <div className="ml-10 mt-10">
                         <h2 className="text-2xl mb-10">
-                        Liste des différentes projets réalisés
+                        Liste des différents projets réalisés
                         </h2>
                         <ul className="list-disc ml-10">
                             {projects.map((project,key) => (
@@ -97,21 +97,21 @@ function Portfolio(props) {
                     </div>
               </div>
             </div>
-            <div className="w-full sm:w-2/3">
+            <div className="w-full lg:w-2/3">
                 {projects.map((project,key) => (
-                    <div id={`${project.name}-${key}`} style={{height: "300px", backgroundColor:"#1c0012"}} className="flex relative w-full" key={key} >
+                    <div id={`${project.name}-${key}`} style={{ backgroundColor:"#1c0012"}} className="md:flex relative w-full" key={key} >
                         <div className={`flex flex-col align-middle w-full h-full ${key % 2 === 0 ? "order-1" : "order-2"}`}>
                             <img style={{height: "300px"}}  className="object-cover" src={project.img} alt="" />
                         </div>
-                        <div className={`h-auto flex flex-col align-middle w-full ${key % 2 === 0 ? "order-2" : "order-1"}`}>
+                        <div style={{minHeight: "300px"}} className={`h-auto flex flex-col align-middle w-full ${key % 2 === 0 ? "order-2" : "order-1"}`}>
                             <h2 className="text-2xl my-3 px-3">{project.name}</h2>
                             <div className="text-left px-3 pb-3 flex-grow" dangerouslySetInnerHTML={{__html: project.html}}></div>
-                            <div className="flex justify-between mb-5 mx-10">
+                            <div className="flex justify-between items-center mb-5 mx-4 md:mx-10">
                                 <a href={project.href}
-                                className={`dark:hover:text-cta  bg-primary-300 dark:hover:bg-primary p-3 rounded-lg transition border border-primary-300 dark:hover:border-secondary ${key % 2 === 0 ? "order-2" : "order-1"}`}>
+                                className={`dark:hover:text-cta  bg-primary-300 dark:hover:bg-primary p-3 rounded-lg transition border border-primary-300 dark:hover:border-secondary order-2 ${key % 2 === 0 ? "md:order-2" : "md:order-1"}`}>
                                 Lien vers le projet
                                 </a>
-                                <div className={`border dark:border-secondary rounded-full h-10 w-10 relative ${key % 2 === 0 ? "order-1" : "order-2"}`}>
+                                <div className={`border dark:border-secondary rounded-full h-10 w-10 relative order-1 ${key % 2 === 0 ? "md:order-1" : "md:order-2"}`}>
                                     <div className="absolute center-absolute text-lg dark:text-secondary">
                                         {key+1}
                                     </div>
