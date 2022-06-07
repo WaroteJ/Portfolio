@@ -8,7 +8,7 @@ const projects = [
         html: `
         <div>
             Projet personnel lié à un jeu de mon enfance, Dofus.
-            </br> Les compétences liés à ce projet
+            </br> Les compétences liées à ce projet
             <ul class="list-disc ml-10">
                 <li>Web scraping (Python)</li>
                 <li>Front-end (React - Bootstrap)</li>
@@ -24,7 +24,7 @@ const projects = [
         html: `
         <div>
             Projet personnel afin de présenter mes réalisations.
-            </br> Les compétences liés à ce projet
+            </br> Les compétences liées à ce projet
             <ul class="list-disc ml-10">
                 <li>Front-end (React - Tailwind)</li>
             </ul>

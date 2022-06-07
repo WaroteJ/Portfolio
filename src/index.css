@@ -31,10 +31,20 @@ code {
           transform: translateX(20vw);
 }
 
+.fade-bottom {
+  margin-top: -20vh;
+  -webkit-transform: translateY(20vh);
+          transform: translateY(20vh);
+}
+
 .fade-in-section.is-visible {
   opacity: 1;
   -webkit-transform: none;
           transform: none;
   visibility: visible;
+}
+
+.fade-bottom.is-visible {
+  margin-top: unset;
 }
 /*# sourceMappingURL=index.css.map */

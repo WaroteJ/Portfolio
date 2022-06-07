@@ -23,7 +23,7 @@ function App() {
           <Fade fadeClass={"fade-left"}>
             <Portfolio path={"portfolio"}/>
           </Fade>
-          <Fade fadeClass={"fade-right"}>
+          <Fade fadeClass={"fade-bottom"}>
             <Skills path={"skills"}/>
           </Fade>
           {/* Add route to contact */}

@@ -39,7 +39,12 @@ const skillCats =
     },
 ];
 
-console.log(skillCats)
+const getFadeClass = (key, arrayLength) => {
+    if (arrayLength % 2 === 1 && key === arrayLength - 1)
+        return "fade-bottom"
+    else return key % 2 === 0 ? "fade-left" : "fade-right"
+}
+
 function Skills(props) {
     return (
         <div id={props.path} className="section mx-auto flex flex-wrap dark:text-secondary pt-10 pb-5">   
@@ -66,7 +71,7 @@ function Skills(props) {
                         <div className="text-2xl mb-5">{skillCat.catName}</div>
                         <div className="w-full flex justify-center flex-wrap">
                             {skillCat.skills.map((skills,skillKey) => (  
-                                <Fade key={skillKey} fadeClass={skillKey % 2 === 0 ? "fade-left" : "fade-right"}>
+                                <Fade key={skillKey} fadeClass={getFadeClass(skillKey, skillCat.skills.length)}>
                                     <div className={"border border-secondary rounded-md flex flex-col mx-5 mb-5"} style={{width:"300px"}}>
                                         <div style={{height: "200px"}} className="flex justify-center mb-3">
                                             <img style={{maxWidth: "200px"}} className="rounded-t-md object-contain" src={skills.img} alt={skills.name} />
